@@ -1,38 +1,26 @@
-name : Firebase Deploy workflow
+name: Deploy
 
-on:
-    push:
-      branches:[main]
-# On pushing to main branch run the following workflow.
-
-workflow_dispatch:
+# Controls when the workflow will run
+'on':
+  #triggers the workflow whenever a push is made to the main branch
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    name : Build
-    runs-on : ubuntu-latest
-    steps:
-      - name : Checkout repository
-        uses : actions/checkout@main
-      - name : Install dependencies
-        run : npm ci
-      - name : Build dependencies
-        run : npm run build
-        
-  deploy:
-    name : Deploy
-    needs : build
+  deploy_to_production:
     runs-on: ubuntu-latest
     steps:
-     - name : Checkout repository
-       uses : actions/checkout@main
-        
-     - name : Deploy to Firebase
-       uses : w9jds/firebase-action@master
-       with:
-        args : deploy --only hosting
-       env:
-          FIREBASE_TOKEN : ${{ secrets.FIREBASE_TOKEN }}
-    
-    
-
+      - uses: actions/checkout@v2
+      # this install the dependencies specified in your package.json file into the current workflow
+      - name: install dependencies
+        # navigates to your functions folder and install the dependencies
+        run: cd functions/ && npm install
+      - name: build
+        run : npm run build
+      - name: deploy to production
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
