@@ -11,7 +11,6 @@ jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       # this install the dependencies specified in your package.json file into the current workflow
       - name: install dependencies
         run: npm install ci
