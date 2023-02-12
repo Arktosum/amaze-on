@@ -10,11 +10,11 @@ export default function Navbar() {
             <img src="./Amaze_ON.png" alt="" className='max-h-full max-w-full'/>
         </Link>
         </div>
-        <div className='text-white font-light'>
+        <div className='text-white font-light absolute ml-[10vw]'>
             Logged In as,
             <div>Siddhu Jaykay</div>
         </div>
-        <div className='text-white font-bold cursor-pointer hover:border-b-cyan-600 hover:border-b-2 duration-200 h-full'><Link to="/">Products</Link></div>
+        <div className='text-white relative font-bold cursor-pointer hover:border-b-cyan-600 hover:border-b-2 duration-200 h-full'><Link to="/">Products</Link></div>
         <div className='text-white font-bold cursor-pointer hover:scale-125 duration-200'>Contact</div>
         <div className='text-white font-bold cursor-pointer hover:scale-125 duration-200'>About</div>
         <div className='text-red-600 font-bold cursor-pointer hover:scale-125 duration-200'>Logout</div>

@@ -32,16 +32,17 @@ export default function ProductPage() {
   for(let ID in products) {
     products[ID]['id'] = ID
     let name = products[ID]['name']
-    if (name.search(regex) != -1)
+    if (name.search(regex) !== -1)
     ele.push(products[ID])
   }
   ele = ele.sort((a,b)=>{
-    if(formData.order == 'asc'){
-      return a.price - b.price
+    if(formData.order === 'asc'){
+      return (a.price - b.price)
     }
-    else if(formData.order == 'desc'){
-      return b.price - a.price
+    else if(formData.order === 'desc'){
+      return (b.price - a.price)
     }
+    return (a.price - b.price)
   })
   let productElements = ele.map((item)=>{
     return <ProductCard key={item['id']}props={item}/>
