@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-
+import Navbar from './Navbar';
 export default function Content() {
 
   let products = {
@@ -12,6 +12,7 @@ export default function Content() {
     PRODUCTS.push(<Product key={key} props={{id:key,product:products[key]}}/>)
   }
   return (<>
+    <Navbar></Navbar>
     <div>Content</div>
     <div className="grid grid-cols-3 gap-5 m-20">
     {PRODUCTS}

@@ -5,7 +5,7 @@ export default function Email(props){
     return (
         <div >
         <div  >
-        <input type="email" className="w-[250px] h-[40px] hover:bg-blue" placeholder='Enter your gmail'  onChange={(e)=>{
+        <input type="email" className={props.my_style} placeholder='Enter your gmail'  onChange={(e)=>{
             props.update(e.target.value)
             
         }}/>
