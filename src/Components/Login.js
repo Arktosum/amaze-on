@@ -35,7 +35,7 @@ function Login() {
                 
                 <div><p className="font-semibold mt-[10px] mb-[-8px] mr-[10px] text-[14px] " >New to Amaze-On?</p></div>
                 
-                <Submit  onclk={set_the_state} thing={"Create a new Amazon account"}/>
+                <Submit  onclk={1} thing={"Create a new Amazon account"}/>
                 </div>
                 
           </div>);
