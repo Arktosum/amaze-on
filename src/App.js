@@ -1,10 +1,9 @@
 
 import './App.css';
+import { Route,Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ProductPage from './Components/ProductPage';
-import { Route,Routes } from 'react-router-dom';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+import CheckoutPage from './Components/CheckoutPage';
 
 function App() {
 
@@ -13,8 +12,7 @@ function App() {
   <Navbar/>
   <Routes>
     <Route path="/" element={<ProductPage/>}></Route>
-    <Route path="/login" element={<Login/>}></Route>
-    <Route path="/signup" element={<Signup/>}></Route>
+    <Route path="/checkout" element={<CheckoutPage/>}></Route>
   </Routes>
   </>
 
