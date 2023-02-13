@@ -11,6 +11,8 @@ let products =  {
 function ProductCard(props){
   let item = props.props
   let addToCart = props.addToCart
+  let selected = props.selected
+  let cartImg = selected ? './cart_active.png' : './cart.svg'
   return(<>
     <div className="bg-gradient-to-tl from-green-400 to-purple-500 product w-[250px] h-[360px] hover:scale-105 duration-200 cursor-pointer ease-in-out hover:shadow-sm hover:shadow-white rounded-xl">
       <div className="h-[290px]">
@@ -20,20 +22,21 @@ function ProductCard(props){
         <div className='text-white overflow-hidden max-h-[28px]'>Name : {item['name']}</div>
         <div className='text-white text-bold overflow-hidden max-h-[30px]'>Price : {'₹ ' + item['price']}</div>
       </div>
-      <div className='h-10 w-10 bg-red-500 absolute top-5 left-3/4 z-0 rounded-full' onClick={(e)=>{
-        alert("Added item : " + item['name'])
-        addToCart(prev=>[...prev,item['id']])
-      }}></div>
+      <div className='h-10 w-10 absolute top-5 left-3/4 z-0 '>
+        <img src={cartImg} alt="" className='duration-200' onClick={(e)=>{
+          addToCart((cart)=>[...cart,item['id']])
+        }}/>
+      </div>
     </div>
   </>)
 }
+
 export default function ProductPage(props) {
   let [formData,setformData] = useState({searchString:"",order:'asc'})
   let addToCart = props.addToCart
-
+  let cart = props.cart
 
   let regex = new RegExp(formData.searchString,'i')
-
   let ele = []
   for(let ID in products) {
     products[ID]['id'] = ID
@@ -51,13 +54,15 @@ export default function ProductPage(props) {
     return (a.price - b.price)
   })
   let productElements = ele.map((item)=>{
-    return <ProductCard key={item['id']}props={item} addToCart={addToCart}/>
+    let selected = false
+    if(cart.includes(item['id'])) selected = true
+    return <ProductCard key={item['id']}props={item} addToCart={addToCart} selected={selected}/>
   })
   
 
   return (
     <div className='min-h-screen bg-black'>
-      <div className='bg-[#1D232C] p-5'>
+      <div className='bg-gradient-to-b from-[#2a2d32] to-black p-5'>
         <h1 className='text-white text-bold text-2xl m-2'>Filter</h1>
         <div className='mx-5'>
           <label htmlFor="searchBar" className='text-white mr-5'>Search </label>

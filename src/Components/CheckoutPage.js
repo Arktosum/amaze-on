@@ -7,24 +7,27 @@ let products =  {
   'B07V6Z1HH2': {'name': 'AmazonBasics 8.5 kg Top Load Washing Machine (Grey/Black, Full Metal body, LED Display)', 'price': 16990.0, 'rating': '4.0 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71EYRYzFKIL.jpg'}, 'B09DD573SY': {'name': 'Semi-Automatic Top Loading Washing Machine (P7020NGAZ, Dark Gray, Wind Jet Dry)', 'price': 12490.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61xtcXJfYaL.jpg'}, 'B08DF1Y7T7': {'name': 'Inverter Fully-Automatic Top Loading Washing Machine (T70Sksf1Z, Middle Free Silver, Turbodrum)', 'price': 17990.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61jhEDBPOaL.jpg'}, 'B08FMN5ZQM': {'name': '5 Star Semi-Automatic Top Loading Washing Machine (WT60R2000LL/TL, Light Grey, Center jet technology)', 'price': 8990.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61ySBQQ9GlL.jpg'}, 'B084LGQKD7': {'name': 'Inverter 5 Star Fully-Automatic Front Loading Washing Machine (WW60R20GLMA/TL, White, Hygiene Steam)', 'price': 22490.0, 'rating': '4.4 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71YPzkeoRzL.jpg'}, 'B07WGD8QQT': {'name': '5 Star Semi-Automatic Top Loading Washing Machine (SUPERB ATOM 7.0, Grey Dazzle, TurboScrub Technology)', 'price': 10440.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/5193gu6GH7L.jpg'}, 'B08QP41KBP': {'name': '5 Star Royal Fully-Automatic Top Loading Washing Machine (WHITEMAGIC ROYAL 7.0 GENX, Grey, Hard Water Wash)', 'price': 15790.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/517QUFygaeL.jpg'}, 'B08QNZTQ96': {'name': 'g 5 Star Royal Fully-Automatic Top Loading Washing Machine (WHITEMAGIC ROYAL 6.5 GENX, Grey, Hard Water Wash)', 'price': 14740.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/51hu9nbHShL.jpg'}, 'B07QGWHH63': {'name': 'ully-Automatic Top Loading Washing Machine (WT EON 620 A Gp Gr, Grey)', 'price': 12990.0, 'rating': '4.1 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/511v47yi5EL.jpg'}, 'B07V3SGB3G': {'name': 'AmazonBasics 7 kg Semi Automatic Washing Machine (with Heavy wash function, White/Blue color)', 'price': 9690.0, 'rating': '3.9 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71+JK-QC68L.jpg'}, 'B07V3SH3LK': {'name': 'Amazon Basics 7 Kg Fully Automatic Front Loading Washing Machine (White, Steam Wash, Built-in Heater)', 'price': 22990.0, 'rating': '3.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61ePF-rDyXL.jpg'}, 'B09T6NH99B': {'name': '5 Star Semi-Automatic Top Loading Washing Machine (WT70M3000UU/TL, LIGHT GRAY, Double Storm Pulsator)', 'price': 10490.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71StafL7njL.jpg'}, 'B0B8NHX62W': {'name': 'verter 5 Star Fully-Automatic Top Load Eco Bubble Washing Machine (WA70BG4441YYTL, Bubble Storm Technology,...', 'price': 17990.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61Ct6+KF4AL.jpg'}, 'B08R8DGDSK': {'name': '5 Star Royal Fully-Automatic Top Loading Washing Machine (WHITEMAGIC ROYAL 6.0 GENX, Satin Grey, Hard Water...', 'price': 14540.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/511tXz6RWYL.jpg'}, 'B083G25P9L': {'name': 'g 5 Star Semi-Automatic Top Loading Washing Machine (ACE 7.5 SUPREME, Grey Dazzle)', 'price': 11490.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61WJqbSrQQL.jpg'}, 'B09T6NX8W2': {'name': '5 Star Semi-Automatic Top Loading Washing Machine (WT65R2200LL/TL, Blue, Air Turbo Drying System)', 'price': 9990.0, 'rating': '4.1 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71WZd+x2RQL.jpg'}, 'B09ZBLDBLN': {'name': ' Front Load Washing Machine 2X Power Dual Steam (DIVA AQUA SXS 6008, Silver, Active Color Protection, Hard ...', 'price': 23790.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71aXjFRD35L.jpg'}, 'B082FJ9RS7': {'name': 'g 5 Star Royal Plus Fully-Automatic Top Loading Washing Machine (WHITEMAGIC ROYAL PLUS 7.5, Grey, Hard Wate...', 'price': 17740.0, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71pVSyDJD9L.jpg'}, 'B09C693228': {'name': ' Semi Automatic Top Loading Washing Machine (WTT70DLIM,Burgundy)', 'price': 'nan', 'rating': '3.9 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61UQoBiuQ8L.jpg'},
   'B0BKPYB28Q': {'name': 'Catron Drive Socket Set, Metric Ratchet Wrench Set with 4-14mm CR-V Sockets, Extension Bars,S2 Bits, Mechan...', 'price': 899.0, 'rating': '4.1 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/81zkP5mzHLL.jpg'}, 'B00JLJ9IDQ': {'name': 'river Set with Bulb - 840 (Neon, Silver and Green)', 'price': 287.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/811PcITWKML.jpg'}, 'B07CLL89VB': {'name': 'ACHRO Chrome Steel Professional Industrial Grade Screwdriver Set with Box Spanners (Silver, Small) -Pack of 24', 'price': 649.0, 'rating': '4.1 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/81DquGlGOdL.jpg'}, 'B07DYC3ND3': {'name': 'Scout Premium 60 in 1 Precision S2 bits Superb Aluminum Screwdriver Set for iPhone 8 / X, Smartphone, Macbo...', 'price': 899.0, 'rating': '4.4 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71I4nbRlTGL.jpg'}, 'B095X9DPDJ': {'name': 'VIBOTON 110 in 1 Screw driver Tool Set Kit, Screwdriver Set, Tool Kit, Professional Precision Screwdriver S...', 'price': 589.0, 'rating': '4.1 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/718HG1mrdZL.jpg'}, 'B07HWWL8Q1': {'name': 'Generic 13Pcs Alternator Freewheel Pulley Removal Socket Bit Set Garage Tool', 'price': 2272.0, 'rating': '4.1 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/41XvZz7HzGL.jpg'}, 'B082B6L6DK': {'name': 'Ketsy 311 Hand Tool Kit 12 Pcs. (8 Pcs Screwdriver •1 Claw Hammer Steel Shaft ½ Lb •1 Combination Plier 8”...', 'price': 845.0, 'rating': '4.0 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/41LuJbLFZzL.jpg'}, 'B0B9Y7K6SP': {'name': 's Tool Kit & Screwdriver and Socket Set,Hand Tool Kit Wrench Set Multi Purpose Combination Tool Case Precis...', 'price': 699.0, 'rating': '4.4 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71qqfUDmiRS.jpg'}, 'B0744NSM3N': {'name': 'T126C Hand Tool Kit (126-Piece) for Home DIY and Professional use', 'price': 1983.6, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/81kskpCT-0L.jpg'}, 'B07G8KHN7N': {'name': ' in 1 Interchangeble Multipurpose Mini Screwdriver Set Magnetic Slot Wrench Bits Repair Tools Kit Set Combi...', 'price': 259.0, 'rating': '4.0 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/41vrQATAo5L.jpg'}, 'B09JNV8MVJ': {'name': 'g Combination Spanner/Wrench Set Tools kit/12 Piece Tools kit for Home use - Professional Spanners , Open End', 'price': 340.0, 'rating': '3.0 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61QmFvx0xeS.jpg'}, 'B0B4KDLV6Y': {'name': 'uCare 5-in-1 Pc Screw Driver Kit With 2 Flat Blades, 2 Phillips Head, 1 Round Poker Bar | Multi-purpose Too...', 'price': 139.0, 'rating': '3.8 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61a1Ny1+Q8L.jpg'}, 'B00INTGY6O': {'name': '500 RE Corded-Electric Drill Tool Set (Blue), 10 mm', 'price': 3999.0, 'rating': '4.4 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/81fP7IRuKKL.jpg'}, 'B0711Y97RQ': {'name': ' Kit (Blue, 12 Pieces)', 'price': 1425.0, 'rating': '4.4 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71rTuYwImRL.jpg'}, 'B07W4KVGWZ': {'name': ' Piece Household Tool Set', 'price': 1669.0, 'rating': '4.4 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61dKElQfyRL.jpg'}, 'B0713YFTHB': {'name': 'oken Bolt Screw Extractor Remover Set Easy Out Drill Bits Tools Kit 3-22mm', 'price': 270.0, 'rating': '3.6 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61Y+7MX4ywL.jpg'}, 'B08SKC9VZX': {'name': 'test PC Repair Screwdriver Set, 110 in 1 Professional Precision Screwdriver Set, Multi-Function Magnetic Re...', 'price': 689.0, 'rating': '4.3 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/61AaaoFDv7L.jpg'}, 'B013ERLQDK': {'name': "5518 16'' Essential Tool Box with Metal Latch (Black and Yellow)", 'price': 783.75, 'rating': '4.2 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/71Rf6RusBoL.jpg'}, 'B0BBB8B9CR': {'name': ' Basic Tool Kit, Home Tool Kit for Men and Students,Tool Box with Tools Included,Small Tool Kit for DIY,Hou...', 'price': 499.0, 'rating': '3.0 out of 5 stars', 'url': 'https://m.media-amazon.com/images/I/51TRrCF+QVL.jpg'}
 }
+
 function ProductCard(props){
   let item = props.item
-  console.log(item)
+  let activeRating = parseInt(Math.random()*5) + 1
+  let unactiveRating = 5 - activeRating
+  let stars = []
+  for(let i = 0; i < activeRating; i++) stars.push(<img src="./active_star.png" alt="" className="w-5 h-5"/>)
+  for(let i = 0; i < unactiveRating; i++) stars.push(<img src="./empty_star.png" alt="" className="w-5 h-5"/>)
+
+
   return (<>
-    <div className=" bg-red-600 flex flex-cols rounded-lg">
-      <div className="h-40 w-[10vw]"><img src={item['url']} alt="" className='h-full w-full rounded-tl-lg rounded-bl-lg'/></div>
-      <div className="bg-blue-600 m-5">
-        <div className="m-2">Name : {item['name']}</div>
-        <div className="m-2">Price : {item['price']}</div>
-        <div className="m-2">Quantity : {item['qty']}</div>
+    <div className="h-40  flex flex-cols rounded-lg">
+      <div className="h-40 shadow-inner w-[10vw] border-r-[#f4ebebb7] border-r-[0.140rem] shadow-black"><img src={item['url']} alt="" className='h-full w-full rounded-tl-lg rounded-bl-lg'/></div>
+      <div className="h-40 w-[40vw] rounded-r-xl bg-slate-500">
+        <div className="text-slate-300 pt-2 pl-2 m-2 text-lg" style={{"font-family": "Signika, sans-serif"}}>Name : {item['name']}</div>
+        <div className="text-slate-300 pt-2 pl-2 m-2 text-lg" style={{"font-family": "Signika, sans-serif"}}>Price : ₹ {item['price']}</div>
+        <div className="text-slate-300 pl-2 flex m-2 gap-2 text-lg" style={{"font-family": "Signika, sans-serif"}}>Rating:
+          {stars}
+        </div>
       </div>
-      <div className="flex m-5 gap-2">
-        <img src="./active_star.png" alt="" className="w-5 h-5"/>
-        <img src="./active_star.png" alt="" className="w-5 h-5"/>
-        <img src="./active_star.png" alt="" className="w-5 h-5"/>
-        <img src="./empty_star.png" alt="" className="w-5 h-5"/>
-        <img src="./empty_star.png" alt="" className="w-5 h-5"/>
-      </div>
+      
     </div>
   </>)
 }
@@ -38,14 +41,12 @@ export default function checkoutPage(props) {
 
   return (
     <div className="min-h-screen bg-black flex flex-cols">
-      <div className="bg-gray-600 w-[60vw] max-h-full rounded-xl m-10">
+      <div className="bg-slate-800 w-[60vw] max-h-full rounded-xl m-10 overflow-y-scroll">
         <div className="p-5 h-full m-10 flex flex-col gap-6">
-          {productElements}
+          {productElements.length > 0 ? productElements:<div>This is Empty</div>}
         </div>
       </div>
-      <div className="bg-gray-800 w-[40vw] rounded-xl m-10">
-        
-      </div>
+      <div className="bg-gray-800 w-[40vw] rounded-xl m-10"></div>
     </div>
   )
 }
