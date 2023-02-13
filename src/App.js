@@ -11,13 +11,11 @@ export default function App() {
   
   return (
   <>
-  <ChakraProvider>
   <Navbar/>
   <Routes>
     <Route path="/" element={<ProductPage addToCart={addToCart} cart={userCart}/>}></Route>
     <Route path="/checkout" element={<CheckoutPage cart={userCart} />}></Route>
   </Routes>
-  </ChakraProvider>
   </>
   );
 }
