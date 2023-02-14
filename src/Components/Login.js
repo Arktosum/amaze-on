@@ -10,9 +10,31 @@ function Login() {
   let [get_value_state,set_value_State]=useState(dic);
   let [get_value_state2,set_value_State2]=useState(dic2);
   function set_the_state(){
-      console.log(get_value_state,get_value_state2)
+        if(!(get_value_state) || !(get_value_state2)){
+            alert("All the fields are required");
+        }
+        else{
+          let data={"email":get_value_state,"password":get_value_state2}
+          let options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                
+            },
+            
+            body: JSON.stringify(data)
+          }
+          console.log(data)
+          // my post request for send the data
+          fetch("https://sympatheticcriticalmaintenance.raghul1122.repl.co/login", options)
+          .then(res=>res.json())
+          .then((data)=>{
+            console.log(data);
+          })
+        }
+        
   }
-  function open_create_new(){
+  function keep_signed_in(){
     console.log("open new");
   }
   return (
@@ -29,7 +51,7 @@ function Login() {
                 <p className="font-semibold w-[250px] mt-2 mb-0.5">Password</p>
                 <Password my_style={"h-[40px]  rounded-[5px] hover:border-2 border-[#F97707] focus:outline-none w-[250px] p-2.5  dark:bg-[#d9d9d9]  "} style={{}} update={set_value_State2}/>
                 
-                <div onClick={(e)=>{console.log(e.target.checked)}} style={{display:"flex",width:"250px",marginTop:"10px" }}> <input className="dark:bg-[#d9d9d9]" type="checkbox"  ></input> <div className="font-semibold ml-[3px]" >Keep me signed in</div> </div>
+                <div onClick={(e)=>{console.log(e.target.checked)}} style={{display:"flex",width:"250px",marginTop:"10px" }}> <input className="dark:bg-[#d9d9d9]" type="checkbox" onClick={keep_signed_in} ></input> <div className="font-semibold ml-[3px]" >Keep me signed in</div> </div>
                 
                 <Submit  onclk={set_the_state} thing={"Login"}/>
                 
