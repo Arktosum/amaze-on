@@ -7,6 +7,7 @@ import {ChakraProvider} from '@chakra-ui/react'
 import React from 'react'
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import Contact from './Components/Contact';
 
 export default function App() {
   let [userCart,addToCart] = React.useState([])
@@ -14,12 +15,13 @@ export default function App() {
   return (
   <>
   <ChakraProvider>
+    
   <Routes>
     <Route path="/" element={<Login/>}></Route>
     <Route path="/signup" element={<Signup/>}></Route>
     <Route path="/product" element={<ProductPage addToCart={addToCart} cart={userCart}/>}></Route>
     <Route path="/checkout" element={<CheckoutPage cart={userCart}/>}></Route>
-    
+    <Route path="/contact" element={<Contact/>}></Route>
   </Routes>
   </ChakraProvider>
   </>
