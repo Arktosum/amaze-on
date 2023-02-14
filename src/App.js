@@ -1,7 +1,6 @@
 
 import './App.css';
-import { Link, Route,Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar';
+import {Route,Routes } from 'react-router-dom';
 import ProductPage from './Components/ProductPage';
 import CheckoutPage from './Components/CheckoutPage';
 import {ChakraProvider} from '@chakra-ui/react'
@@ -15,15 +14,12 @@ export default function App() {
   return (
   <>
   <ChakraProvider>
-  <Navbar/>
-  <Link to='/login'>LOGIN</Link>
-  <Link to='/signup'>SIGNUP</Link>
   <Routes>
-    <Route path="/" element={<ProductPage addToCart={addToCart} cart={userCart}/>}></Route>
-    <Route path="/checkout" element={<CheckoutPage cart={userCart}/>}></Route>
-    <Route path="/login" element={<Login/>}></Route>
+    <Route path="/" element={<Login/>}></Route>
     <Route path="/signup" element={<Signup/>}></Route>
-
+    <Route path="/product" element={<ProductPage addToCart={addToCart} cart={userCart}/>}></Route>
+    <Route path="/checkout" element={<CheckoutPage cart={userCart}/>}></Route>
+    
   </Routes>
   </ChakraProvider>
   </>

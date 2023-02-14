@@ -1,4 +1,5 @@
 import {React,useState} from "react"
+import { Link } from "react-router-dom";
 
 export default function Login() {
   let [formData,setFormData]=useState({email:"",password:""});
@@ -30,14 +31,19 @@ export default function Login() {
       </div>
 
       <div style={{marginTop:"10px"}}>
+        <Link to="/product">
         <input className="w-[250px] bg-[#f97316] hover:bg-[#fb923c] text-white font-bold py-2 px-4 rounded-[5px]" type="submit" value="Login"/>
+        </Link>
+        
       </div>
       <div>
         <p className="font-semibold mt-[10px] mb-[-8px] mr-[10px] text-[14px] " >New to Amaze-On?</p>
       </div>
   
     <div style={{marginTop:"10px"}}>
-      <input className="w-[250px] bg-[#f97316] hover:bg-[#fb923c] text-white font-bold py-2 px-4 rounded-[5px]" type="submit" value="Create a new Amazon account"/>
+      <Link to="/signup">
+        <input className="w-[250px] bg-[#f97316] hover:bg-[#fb923c] text-white font-bold py-2 px-4 rounded-[5px]" type="submit" value="Create a new Amazon account"/>
+      </Link>
     </div>
   </div>
   </div>  
