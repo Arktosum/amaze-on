@@ -4,6 +4,7 @@ import { Route,Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import ProductPage from './Components/ProductPage';
 import CheckoutPage from './Components/CheckoutPage';
+import {ChakraProvider} from '@chakra-ui/react'
 import React from 'react'
 
 export default function App() {
@@ -11,11 +12,13 @@ export default function App() {
   
   return (
   <>
+  <ChakraProvider>
   <Navbar/>
   <Routes>
     <Route path="/" element={<ProductPage addToCart={addToCart} cart={userCart}/>}></Route>
     <Route path="/checkout" element={<CheckoutPage cart={userCart} />}></Route>
   </Routes>
+  </ChakraProvider>
   </>
   );
 }
