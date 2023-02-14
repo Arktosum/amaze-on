@@ -1,5 +1,4 @@
 import React from 'react'
-import { useToast } from '@chakra-ui/react'
 import Navbar from './Navbar'
 
 let products =  {
