@@ -2,9 +2,10 @@ import {React,useState} from "react"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
-import {useHistory} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate()
   const toast = useToast()
   let [formData,setFormData]=useState({email:"",password:""});
 
@@ -27,9 +28,9 @@ export default function Login() {
           status:'success',
           duration: 3000
         })
-        const {name, email, password, picture} = data
-        localStorage.setItem('user', JSON.stringify({name, email, password, picture}))
-        console.log(JSON.parse(localStorage.getItem('user')))
+        const {name, email, password, image} = data
+        localStorage.setItem('user', JSON.stringify({name, email, password, image}))
+        navigate('/product')
       }
     }
     catch(err){

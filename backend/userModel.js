@@ -5,7 +5,7 @@ const users = new mongoose.Schema({
     email:{type:'String', trim:true},
     password:{type:'String', trim:true},
     authToken:{type:'String', trim:true},
-    picture:{type:'String', trim:true},
+    image:{type:String}
 }, {timestamps:true})
 
 const User = mongoose.model('User',users)

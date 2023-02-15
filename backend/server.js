@@ -14,13 +14,24 @@ const generateToken = require('./tokenGenerate');
 
 // console.log(process.env.PORT)
 
-const storage = multer.memoryStorage()  // we use memoryStorage here instead of DiskStorage as we will resize the images and so we need to keep it temporarily in memory beofre storing it.
-const uploads = multer({storage})   // this uploads can be used as a middleware for storing the data and images
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'images/users')
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = process.env.IMAGE + Date.now() + '-' + Math.round(Math.random() * 1E9)
+        const name = file.originalname.split(' ').join('')
+        cb(null, uniqueSuffix+name)
+    }
+})
+
+const upload = multer({ storage : storage })
 
 const app = express();
 app.use(cors())
 app.use(express.json())
-app.use(express.static('Images/user'))
+
+app.use('/images', express.static('images'))
 
 const connectionParams = {
     useNewUrlParser: true,
@@ -101,7 +112,7 @@ app.get('/', (req, res)=>{
     res.send("<h1>Hello world!</h1>")
 })
 
-app.post('/signup', uploads.single('image'), async (req, res)=>{    // we give uploads.single() because we want to handle only single files
+app.post('/signup', upload.single("image"), async (req, res)=>{    // we give uploads.single() because we want to handle only single files
     //  here we gave "image" inside because it denotes the name of the input tag where we get the image input
 
     if(!req.body.name || !req.body.password || !req.body.email){
@@ -114,37 +125,20 @@ app.post('/signup', uploads.single('image'), async (req, res)=>{    // we give u
         return
     }
 
-    console.log(req.body)
-
-    let imgUrl
-
     try{
-        await sharp(req.file.buffer)
-        .resize({width:600, height:600})
-        .jpeg({ mozjpeg: true })
-        .toFile(`./Images/user/${req.body.email}.jpeg`, (err, val)=>{
-            if(err){console.log(err)}
-        })
-        imgUrl = `http://localhost:7000/${req.body.email}.jpeg`
+        let {name, email, password} = req.body
+        const hashedPassword= await bcrypt.hash(password, 10)
+        const token = generateToken(email)
+        let image = req.file.filename
+        let user = new User({name, email, password:hashedPassword, image, authToken:token})
+        user.save()
+        res.status(201).json({name, email, image})
     }
     catch(err){
-        console.log(err)
+        res.status(400).json({data:"Error while creating user"})
+        console.log(err.message)
     }
-
-    var user = new User()
-    user.name = req.body.name
-    user.email = req.body.email
-    user.password = await bcrypt.hash(req.body.password, 10);
-    user.authToken = generateToken(user.email)
-    user.picture = imgUrl
-    user.save((err, data)=>{
-        if(err){
-            res.status(400).json({data:"Error while creating user"})
-            console.error(err.message)}
-        else{
-            res.status(201).json({name:req.body.name, email:req.body.email, picture:imgUrl, token:user.authToken})
-        }
-    })
+    
 })   
 
 app.post('/login', async (req, res)=>{

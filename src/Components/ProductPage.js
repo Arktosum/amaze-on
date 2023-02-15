@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
 import Navbar from './Navbar'
 
@@ -50,6 +50,8 @@ function ProductCard(props){
 }
 
 export default function ProductPage(props) {
+  const toast = useToast()
+  let navigate = useNavigate()
   let [formData,setformData] = useState({searchString:"",order:'asc'})
   let addToCart = props.addToCart
   let cart = props.cart
@@ -77,6 +79,20 @@ export default function ProductPage(props) {
     return <ProductCard key={item['id']}props={item} addToCart={addToCart} selected={selected}/>
   })
   
+  const checkout = ()=>{
+    if(cart.length > 0){
+      navigate('/checkout')
+    }
+    else{
+      toast({
+        title:"Select a Product to checkout",
+        variant: 'subtle',
+        isClosable: true,
+        position:'top',
+        duration:3000
+      })
+    }
+  }
 
   return (
     <div>
@@ -105,9 +121,7 @@ export default function ProductPage(props) {
             }}/>
           </div>
         </div>
-        <Link to="/checkout">
-          <p className="p-5 rounded max-w-fit border-green-500 text-green-500 border-2 hover:bg-green-600 duration-200 hover:text-white cursor-pointer hover:scale-105">Proceed to Checkout</p>
-        </Link>
+          <p className="p-5 rounded max-w-fit border-green-500 text-green-500 border-2 hover:bg-green-600 duration-200 hover:text-white cursor-pointer hover:scale-105" onClick={checkout}>Proceed to Checkout</p> 
       </div>
       <div className='grid grid-cols-4 m-10 gap-7'>
         {productElements}
