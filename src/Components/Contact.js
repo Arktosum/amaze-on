@@ -22,7 +22,7 @@ export default function Contact() {
     function delete_data(id){
         const newlist=list.filter((input)=>
             input.id!==id);
-        setlist(newlist);
+            setlist(newlist);
     }
 
   return (<>

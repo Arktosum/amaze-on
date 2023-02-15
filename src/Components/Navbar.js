@@ -16,8 +16,8 @@ export default function Navbar() {
             <div>Siddhu Jaykay</div>
         </div>
         <div className={`text-white relative font-bold cursor-pointer hover:scale-105 duration-200 ${hoverAnimation}`}><Link to="/product">Products</Link></div>
-        <div className={`text-white font-bold cursor-pointer hover:scale-105 duration-200 ${hoverAnimation}`}>Contact</div>
-        <div className={`text-white font-bold cursor-pointer hover:scale-105 duration-200 ${hoverAnimation}`}>About</div>
+        <div className={`text-white font-bold cursor-pointer hover:scale-105 duration-200 ${hoverAnimation}`}><Link to="/contact">Contact</Link></div>
+        <div className={`text-white font-bold cursor-pointer hover:scale-105 duration-200 ${hoverAnimation}`}><Link to="/about">About</Link></div>
         <div className={`text-red-600 font-bold cursor-pointer hover:scale-105 duration-200 ${hoverAnimation}`}>Logout</div>
         <div className='image-cropper rounded-full mx-5 w-[10vh] h-[10vh]'>
             <img src="./henry-cavill.jpg" alt="" className='rounded-full w-full h-full'/>
