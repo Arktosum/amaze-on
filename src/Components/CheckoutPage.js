@@ -89,7 +89,7 @@ function TotalCost(props){
         </tr>
       </table>
       <div className="flex justify-between">
-        <img src="http://localhost:7000/images/qr.svg" className='h-[200px] mt-8'/>
+        <img src="http://localhost:7000/images/qr.svg" alt="" className='h-[200px] mt-8'/>
         <button onClick={paid} className="text-slate-50 bg-gray-500 hover:border-2 hover:bg-transparent text-2xl h-fit px-16 ml-12 transition-all duration-300 rounded-xl mt-24 p-8">Finalize</button>
       </div>
     </div>

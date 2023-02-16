@@ -23,7 +23,7 @@ export default function About() {
   <div class="col-lg-6">
     <h1 class="display-4 text-white">About us page</h1>
     <p class="lead text-muted mb-0 text-white">This is a testing website made for college project</p>
-    <p class="lead text-muted text-white"><a  class="text-muted"> 
+    <p class="lead text-muted text-white"><a href="https://github.com/" class="text-muted"> 
                 <u></u></a>
     </p>
   </div>

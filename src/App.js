@@ -1,6 +1,6 @@
 
 import './App.css';
-import {Route,Routes, BrowserRouter } from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 import ProductPage from './Components/ProductPage';
 import CheckoutPage from './Components/CheckoutPage';
 import {ChakraProvider} from '@chakra-ui/react'
