@@ -9,7 +9,7 @@ export default function Signup(){
   const navigate = useNavigate()
 
     let [formData,setFormData]=useState({email:"",password:"",confirm:""});
-    var image;
+
     
     function handleImage(event){
       setFormData({...formData, image:event.target.files[0]})
