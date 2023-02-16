@@ -40,7 +40,6 @@ export default function Signup(){
     }
 
       const {data} = await axios.post('http://localhost:7000/signup', form, config)
-      // console.log(data)
       if(data.data){
         toast({
           title:`${data.data}`,

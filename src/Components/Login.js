@@ -12,6 +12,7 @@ export default function Login() {
   async function submitHandler(user){
     try{
       const {data} = await axios.post('http://localhost:7000/login', user)
+
       if(data.data){
         toast({
           title:`${data.data}`,
@@ -34,7 +35,13 @@ export default function Login() {
       }
     }
     catch(err){
-      console.log(err.message)
+      toast({
+        title:`${err.message}`,
+        isClosable:true,
+        status:'warning',
+        duration: 3000
+      })
+      return
     }
   }
 
@@ -65,7 +72,7 @@ export default function Login() {
       </div>
 
       <div style={{marginTop:"10px"}}>
-        <button className="w-[250px] bg-[#f97316] hover:bg-[#fb923c] text-white font-bold py-2 px-4 rounded-[5px]" onClick={()=>{submitHandler(formData)}}>SignIn</button>
+        <button className="w-[250px] bg-[#f97316] hover:bg-[#fb923c] text-white font-bold py-2 px-4 rounded-[5px]" onClick={()=>{submitHandler(formData)}}>Sign In</button>
         
       </div>
       <div>
@@ -80,6 +87,4 @@ export default function Login() {
   </div>
   </div>  
   </>)
-  
 }
-

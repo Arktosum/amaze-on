@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = process.env.IMAGE + Date.now() + '-' + Math.round(Math.random() * 1E9)
-        const name = file.originalname.split(' ').join('')
+        const name = file.originalname.split(' ').join('').split('-').join('').split('/').join('')
         cb(null, uniqueSuffix+name)
     }
 })
@@ -115,14 +115,14 @@ app.get('/', (req, res)=>{
 app.post('/signup', upload.single("image"), async (req, res)=>{    // we give uploads.single() because we want to handle only single files
     //  here we gave "image" inside because it denotes the name of the input tag where we get the image input
 
+    console.log(req.body)
+
     if(!req.body.name || !req.body.password || !req.body.email){
-        res.status(403).send("Please Enter all credentials")
-        return
+        res.status(403).json({data:"Please Enter all credentials"})
     }
     const userExist = await User.findOne({email:req.body.email})
     if(userExist){
-        res.status(400).send("User already exists")
-        return
+        res.status(400).json({data:"User already exists"})
     }
 
     try{
@@ -144,23 +144,24 @@ app.post('/signup', upload.single("image"), async (req, res)=>{    // we give up
 app.post('/login', async (req, res)=>{
 
     const {email, password} = req.body
+
     if(!req.body.password || !req.body.email){
-        res.status(403).send("Please Enter all credentials")
+        res.status(403).json({data:"Please Enter all credentials"})
     }
 
     const user = await User.findOne({email})
 
     if(!user){
         res.status(404).json({data: "User not found"})
-        return
-    }
-
-    if (await matchPassword(password, user.password)){
-        res.status(201).json(user)
-        //  remember to save the user in the local storage when the data is returned
     }
     else{
-        res.status(200).json({data: "Wrong Password"})
+        if (await matchPassword(password, user.password)){
+            res.status(201).json(user)
+            //  remember to save the user in the local storage when the data is returned
+        }
+        else{
+            res.status(200).json({data: "Wrong Password"})
+        }
     }
 })
 
