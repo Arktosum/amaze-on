@@ -39,7 +39,7 @@ function ProductCard(props){
 async function paid(){
   try{
     const user = JSON.parse(localStorage.getItem('user'))
-    await axios.post('http://localhost:7000/orderplaced', user)
+    await axios.post('https://Amaze-On.raghul1122.repl.co/orderplaced', user)
     console.log("Success")
   }
   catch(err){

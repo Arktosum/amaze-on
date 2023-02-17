@@ -36,7 +36,7 @@ export default function Signup(){
         headers: { 'content-type': 'multipart/form-data' }
     }
 
-      const {data} = await axios.post('http://localhost:7000/signup', form, config)
+      const {data} = await axios.post('https://Amaze-On.raghul1122.repl.co/signup', form, config)
       if(data.data){
         toast({
           title:`${data.data}`,
