@@ -12,7 +12,7 @@ export default function Login() {
   async function submitHandler(user){
     try{
       const {data} = await axios.post('http://localhost:7000/login', user)
-
+      console.log(data)
       if(data.data){
         toast({
           title:`${data.data}`,
@@ -34,6 +34,7 @@ export default function Login() {
         navigate('/product')
       }
     }
+
     catch(err){
       toast({
         title:`${err.message}`,
