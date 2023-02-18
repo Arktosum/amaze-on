@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import Navbar from './Navbar'
 export default function Contact() {
     let [list,setlist]=useState([]);
     let [input,setinput]=useState("");
@@ -26,6 +26,7 @@ export default function Contact() {
     }
 
   return (<>
+    <Navbar/>
     <div className="flex flex-col justify-center min-h-[100vh] w-[100%] h-[100%] m-0% items-center bg-[#000000]">
         <div>
         <div ><h1 className='font-bold text-[21px]  text-[white]'>You can post your queries here</h1></div>
