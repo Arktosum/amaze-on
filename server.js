@@ -14,12 +14,12 @@ const generateToken = require('./tokenGenerate');
 
 // console.log(process.env.PORT)
 
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'images/users')
     },
     filename: function (req, file, cb) {
-        const uniqueSuffix = process.env.IMAGE + Date.now() + '-' + Math.round(Math.random() * 1E9)
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
         const name = file.originalname.split(' ').join('').split('-').join('').split('/').join('')
         cb(null, uniqueSuffix+name)
     }
@@ -40,11 +40,6 @@ const connectionParams = {
 
 async function matchPassword(password, Password){
     return await bcrypt.compare(password, Password)
-}
-
-async function authorize(token){
-    const user = jwt.verify(token, process.env.SECRET_KEY)
-    return user
 }
 
 async function sendTempMail(user){
@@ -112,10 +107,8 @@ app.get('/', (req, res)=>{
     res.send("<h1>Hello world!</h1>")
 })
 
-app.post('/signup', upload.single("image"), async (req, res)=>{    // we give uploads.single() because we want to handle only single files
+app.post('/signup', upload.single('image'), async (req, res)=>{    // we give uploads.single() because we want to handle only single files
     //  here we gave "image" inside because it denotes the name of the input tag where we get the image input
-
-    console.log(req.body)
 
     if(!req.body.name || !req.body.password || !req.body.email){
         res.status(403).json({data:"Please Enter all credentials"})
@@ -129,14 +122,16 @@ app.post('/signup', upload.single("image"), async (req, res)=>{    // we give up
         let {name, email, password} = req.body
         const hashedPassword= await bcrypt.hash(password, 10)
         const token = generateToken(email)
-        let image = req.file.filename
+        let image = `http://localhost:7000/images/users/` + req.file.filename
         let user = new User({name, email, password:hashedPassword, image, authToken:token})
         user.save()
+        console.log('saved')
         res.status(201).json({name, email, image})
     }
+
     catch(err){
         res.status(400).json({data:"Error while creating user"})
-        console.log(err.message)
+        console.log("There is an error", err)
     }
     
 })   
@@ -152,7 +147,7 @@ app.post('/login', async (req, res)=>{
     const user = await User.findOne({email})
 
     if(!user){
-        res.status(404).json({data: "User not found"})
+        res.json({data: "User not found"})
     }
     else{
         if (await matchPassword(password, user.password)){
