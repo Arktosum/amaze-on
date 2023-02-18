@@ -11,7 +11,7 @@ export default function Login() {
 
   async function submitHandler(user){
     try{
-      const {data} = await axios.post('https://Amaze-On.raghul1122.repl.co/http://localhost:7000/login', user)
+      const {data} = await axios.post('https://Amaze-On.raghul1122.repl.co/login', user)
       console.log(data)
       if(data.data){
         toast({
